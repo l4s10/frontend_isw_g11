@@ -12,13 +12,13 @@ body{
     text-align: center;
     padding: 2vh;
 }
-.div-hijo{
-    width: 80vh;
-    height: auto;
+.contenedorCards{
+    max-width: 100vh;
+    max-height: 83vh;
     margin: 0px auto;
-    /* overflow-y: scroll;
-    overflow-x: hidden; */
-    padding: 3vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* padding: 3vh; */
 }
 .titulo{
     max-width: 93vh;
