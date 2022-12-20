@@ -1,0 +1,45 @@
+*{
+    /* border: 1px solid red; */
+}
+body{
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+.div-padre{
+    /* border: 1px solid red; */
+    max-width: 100vh;
+    height: auto;
+    margin: 0px auto;
+    text-align: center;
+    padding: 2vh;
+}
+.div-hijo{
+    width: 80vh;
+    height: auto;
+    margin: 0px auto;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
+    padding: 3vh;
+}
+.titulo{
+    max-width: 93vh;
+    text-align: center;
+    margin: 0px auto;
+    padding: 3vh;
+}
+.descripcion{
+    text-align: justify;
+    max-width: 100vh;
+    margin: 2vh auto;
+    padding: 2vh;
+
+}
+.fotos{
+    width: auto;
+    height: 25vh;
+    padding: 1vh;
+    margin: auto;
+    display: inline-block;
+}
+.botonInforme{
+    
+}
