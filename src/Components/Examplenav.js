@@ -23,7 +23,7 @@ export default function ButtonAppBar() {
             <HolidayVillageIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Mural de mantenciones
+            Bienvenido a Condomio Sample Text
           </Typography>
           <Button href="" color="inherit">¿Eres administrador?</Button>
         </Toolbar>
