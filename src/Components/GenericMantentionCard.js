@@ -1,5 +1,4 @@
 import { Grid, Button, Card, CardContent } from "@mui/material";
-import { LoremIpsum } from "react-lorem-ipsum";
 import './Styleforpages.css';
 
 export default function GenericMantentionCard(props){
