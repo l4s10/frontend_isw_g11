@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -17,15 +17,15 @@ export default function ButtonAppBar() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            href=""
+            href="/"
             sx={{ mr: 2 }}
           >
             <HolidayVillageIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Bienvenido a Condomio Sample Text
+            Condomio Sample Text
           </Typography>
-          <Button href="" color="inherit">¿Eres administrador?</Button>
+          <Button href={props.ruta} color="inherit">{props.identifier}</Button>
         </Toolbar>
       </AppBar>
     </Box>

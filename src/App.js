@@ -1,10 +1,15 @@
 import './App.css';
 import Mantentions from './Components/MantentionsPage';
+import AdminPage from './Components/AdminPage';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-function App() {
+export default function App() {
   return (
-    <Mantentions></Mantentions>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Mantentions/>}/>
+          <Route path='admin' element={<AdminPage/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
