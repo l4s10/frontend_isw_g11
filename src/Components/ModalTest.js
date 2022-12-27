@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Modal, Form} from 'react-bootstrap';
+import {Button, Modal, Form, FloatingLabel} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
@@ -44,7 +44,17 @@ export default function ModalTest() {
                         // maxDate={new Date("01/01/2122")}
                         placeholderText="Ingrese fecha"
                     />
+                </Form.Group>
 
+                <Form.Group controlId="descripcion">
+                <Form.Label>Descripción</Form.Label>
+                <FloatingLabel label="max 2000 caracteres">
+                    <Form.Control
+                    as="textarea"
+                    placeholder="Leave a description here"
+                    style={{ height: '100px' }}
+                    />
+                </FloatingLabel>
                 </Form.Group>
 
                 <Form.Group controlId="imagenPrevia" className="mb-3">
@@ -67,9 +77,7 @@ export default function ModalTest() {
 
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
-                <Button variant="primary" type="submit" >
-                    Subir mantención
-                </Button>
+                <Button variant="primary" type="submit">Enviar</Button>
             </Modal.Footer>
 
         </Modal>
