@@ -3,7 +3,8 @@ import ButtonAppBar from "./Examplenav";
 import AdminMantentionCard from "./AdminMantentionCard";
 import { LoremIpsum } from "react-lorem-ipsum";
 import './Styleforpages.css';
-import { Button } from "@mui/material";
+import ModalIngreso from './ModalIngreso';
+import ModalTest from "./ModalTest";
 
 export default function AdminPage(){
     return(
@@ -14,7 +15,9 @@ export default function AdminPage(){
             <h1 className="titulo">Mural de mantenciones</h1>
             <h2 className="titulo">Bienvenido Administrador</h2>
             <div className="div-padre">
-                <Button size="large" variant="contained" color="primary">Ingresar una nueva mantencion</Button>
+                {/* <Button size="large" variant="contained" color="primary">Ingresar una nueva mantencion</Button> */}
+                {/* <ModalIngreso/> */}
+                <ModalTest/>
             </div>
             <div className="contenedorCards">
                 <AdminMantentionCard
