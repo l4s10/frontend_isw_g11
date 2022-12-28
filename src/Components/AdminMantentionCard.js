@@ -1,5 +1,7 @@
-import { Grid, Button, Card, CardContent } from "@mui/material";
+import { Grid, Card, CardContent } from "@mui/material";
 import './Styleforpages.css';
+import ModalTest from "./ModalTest";
+import {Button} from "react-bootstrap";
 
 export default function AdminMantentionCard(props){
     return(
@@ -18,8 +20,9 @@ export default function AdminMantentionCard(props){
                             <img src={props.urlAfter} alt="IMG DESPUES" className="fotos"></img>
                     </Grid>
                     <div className="div-padre">
-                        <Button size="large" variant="contained" color="error">Editar Mantencion</Button>
-                        <Button size="large" variant="contained">Descargar informe</Button>
+                        {/* <Button size="large" variant="contained" color="error">Editar Mantencion</Button> */}
+                        <ModalTest titleModal="Modificar Mantención" buttonName="Editar mantención"/>
+                        <Button variant="primary">Descargar informe</Button>
                     </div>
                 </div>
             </Grid>

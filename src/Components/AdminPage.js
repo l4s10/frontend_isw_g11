@@ -14,7 +14,7 @@ export default function AdminPage(){
             <h1 className="titulo">Mural de mantenciones</h1>
             <h2 className="titulo">Bienvenido Administrador</h2>
             <div className="div-padre">
-                <ModalTest/>
+                <ModalTest titleModal="Nueva Mantención" buttonName="Ingresar Nueva Mantención"/>
             </div>
             <div className="contenedorCards">
                 <AdminMantentionCard
