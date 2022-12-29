@@ -11,7 +11,7 @@ export default function AdminMantentionCard(props){
                 <Grid >
                 <h1 className="titulo">{props.name}</h1>
                 <div>
-                    <p className="empresa">Llevado a cabo por {props.empresa}</p>
+                    <p className="empresa">Llevado a cabo por <b>{props.empresa}</b></p>
                     <p className="descripcion">
                         {props.descripcion}
                     </p>
