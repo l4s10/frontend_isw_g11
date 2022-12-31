@@ -21,7 +21,7 @@ export default function AdminMantentionCard(props){
                     </Grid>
                     <div className="div-padre">
                         {/* <Button size="large" variant="contained" color="error">Editar Mantencion</Button> */}
-                        <ModalTest titleModal="Modificar Mantención" buttonName="Editar mantención"/>
+                        <ModalTest titleModal="Modificar Mantención" buttonName="Editar mantención" idMantencion={props.key}/>
                         <Button variant="primary">Descargar informe</Button>
                     </div>
                 </div>

@@ -25,18 +25,19 @@ export default function ModalTest(props) {
                 <Form action="POST">
                     <Form.Group className="mb-3" controlId="nameMantention">
                         <Form.Label>Nombre</Form.Label>
-                        <Form.Control type="text" placeholder="Máx 100 carácteres" />
+                        <Form.Control type="text" placeholder="Sin tildes o carácteres especiales" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="nameEncargado">
                         <Form.Label>Empresa encargada</Form.Label>
-                        <Form.Control type="text" placeholder="Máx 100 carácteres" />
+                        <Form.Control type="text" placeholder="Máx 100 carácteres" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="dateMantention">
                         <Form.Label>Fecha</Form.Label>
                         {/* Datepicker */}
                         <DatePicker
+                            required
                             selected={selectedDate}
                             onChange={date => setSelectedDate(date)}
                             dateFormat='dd/MM/yyyy'
@@ -50,8 +51,9 @@ export default function ModalTest(props) {
                     <Form.Label>Descripción</Form.Label>
                     <FloatingLabel label="max 2000 caracteres">
                         <Form.Control
+                        required
                         as="textarea"
-                        placeholder="Leave a description here"
+                        placeholder="Deje una descripcion aqui"
                         style={{ height: '100px' }}
                         />
                     </FloatingLabel>
