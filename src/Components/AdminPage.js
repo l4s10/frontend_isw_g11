@@ -11,15 +11,13 @@ import React, {useEffect, useState} from 'react';
 export default function AdminPage(){
     //HOOKS
     const [data,setData] = useState();
-
     const getData=async () =>{
-        const response= await Axios.get("http://localhost:3001/api/Mantentions/view");
+        const response= await Axios.get('http://localhost:3001/api/Mantentions/view');
         setData(response.data);
-        }
-
-        useEffect(()=>{
-            getData()
-        },[]);
+    }
+    useEffect(()=>{
+        getData()
+    },[]);
 
     return(
         <div>

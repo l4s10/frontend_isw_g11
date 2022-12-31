@@ -1,4 +1,5 @@
-import { Grid, Button, Card, CardContent } from "@mui/material";
+import { Grid, Card, CardContent } from "@mui/material";
+import { Button } from "react-bootstrap";
 import './Styleforpages.css';
 
 export default function GenericMantentionCard(props){
@@ -17,7 +18,7 @@ export default function GenericMantentionCard(props){
                             <img src={props.urlBefore} alt="IMG ANTES" className="fotos"></img>
                             <img src={props.urlAfter} alt="IMG DESPUES" className="fotos"></img>
                     </Grid>
-                    <Button className="botonInforme" size="large" variant="contained">Descargar informe</Button>
+                    <Button className="botonInforme" size="large" variant="primary">Descargar informe</Button>
                 </div>
             </Grid>
                 </CardContent>

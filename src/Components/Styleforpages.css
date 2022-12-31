@@ -2,6 +2,7 @@ body{
     background-image: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%);
     background-size:inherit;
     background-repeat: repeat;
+    height: 118vh;
 }
 .div-padre{
     max-width: auto;
