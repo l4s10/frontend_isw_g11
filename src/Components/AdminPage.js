@@ -4,8 +4,23 @@ import AdminMantentionCard from "./AdminMantentionCard";
 import { LoremIpsum } from "react-lorem-ipsum";
 import './Styleforpages.css';
 import ModalTest from "./ModalTest";
+//Conectandonos al backend
+import Axios from "axios";
+import React, {useEffect, useState} from 'react';
 
 export default function AdminPage(){
+    //HOOKS
+    const [data,setData] = useState();
+
+    const getData=async () =>{
+        const response= await Axios.get("http://localhost:3001/api/Mantentions/view");
+        setData(response.data);
+        }
+
+        useEffect(()=>{
+            getData()
+        },[]);
+
     return(
         <div>
             <div>
@@ -17,7 +32,7 @@ export default function AdminPage(){
                 <ModalTest titleModal="Nueva Mantención" buttonName="Ingresar Nueva Mantención"/>
             </div>
             <div className="contenedorCards">
-                <AdminMantentionCard
+                {/* <AdminMantentionCard
                     name="Mantención N°1: Cambio de rejas en el bloque A"
                     empresa="Empresa Feliz"
                     descripcion={<LoremIpsum p={1}/>}
@@ -37,7 +52,19 @@ export default function AdminPage(){
                     descripcion={<LoremIpsum p={3}/>}
                     urlBefore="https://www.shutterstock.com/shutterstock/photos/1114829027/display_1500/stock-photo-electric-box-system-in-empty-room-1114829027.jpg"
                     urlAfter="https://www.shutterstock.com/shutterstock/photos/1780414628/display_1500/stock-photo-electrician-engineer-checks-electrical-circuit-in-control-panel-for-high-current-and-voltage-1780414628.jpg"
-                />
+                /> */}
+                {(data ?? []).map((item) => {
+                    return (
+                        <AdminMantentionCard
+                            key={item.id}
+                            name={item.title}
+                            empresa={item.maintenceManager}
+                            descripcion={item.description}
+                            urlBefore="https://www.shutterstock.com/shutterstock/photos/1114829027/display_1500/stock-photo-electric-box-system-in-empty-room-1114829027.jpg"
+                            urlAfter="https://www.shutterstock.com/shutterstock/photos/1780414628/display_1500/stock-photo-electrician-engineer-checks-electrical-circuit-in-control-panel-for-high-current-and-voltage-1780414628.jpg"
+                        />
+                    );
+                })}
             </div>
         </div>
     );
