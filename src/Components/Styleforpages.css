@@ -11,6 +11,9 @@ body{
     text-align: center;
     padding: 1vh;
 }
+.div-hijo{
+    padding: 1vh;
+}
 .contenedorCards{
     max-width: 120vh;
     max-height: 82.6vh;

@@ -51,12 +51,14 @@ export default function AdminPage(){
                     urlBefore="https://www.shutterstock.com/shutterstock/photos/1114829027/display_1500/stock-photo-electric-box-system-in-empty-room-1114829027.jpg"
                     urlAfter="https://www.shutterstock.com/shutterstock/photos/1780414628/display_1500/stock-photo-electrician-engineer-checks-electrical-circuit-in-control-panel-for-high-current-and-voltage-1780414628.jpg"
                 /> */}
+                {/* Accediendo al arreglo de mantenciones del servidor */}
                 {(data ?? []).map((item) => {
                     return (
                         <AdminMantentionCard
                             key={item.id}
                             name={item.title}
                             empresa={item.maintenceManager}
+                            cost={item.cost}
                             descripcion={item.description}
                             urlBefore="https://www.shutterstock.com/shutterstock/photos/1114829027/display_1500/stock-photo-electric-box-system-in-empty-room-1114829027.jpg"
                             urlAfter="https://www.shutterstock.com/shutterstock/photos/1780414628/display_1500/stock-photo-electrician-engineer-checks-electrical-circuit-in-control-panel-for-high-current-and-voltage-1780414628.jpg"

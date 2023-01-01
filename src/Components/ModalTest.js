@@ -8,8 +8,8 @@ export default function ModalTest(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
     const [selectedDate, setSelectedDate] = useState(null);
+
     return (
         <>
         <Button variant="primary" onClick={handleShow}>
@@ -22,7 +22,7 @@ export default function ModalTest(props) {
             </Modal.Header>
 
             <Modal.Body>
-                <Form action="POST">
+                <Form action="http://localhost:3001/api/Mantention/Create" method="POST">
                     <Form.Group className="mb-3" controlId="nameMantention">
                         <Form.Label>Nombre</Form.Label>
                         <Form.Control type="text" placeholder="Sin tildes o carácteres especiales" required />
@@ -61,27 +61,25 @@ export default function ModalTest(props) {
 
                     <Form.Group controlId="imagenPrevia" className="mb-3">
                         <Form.Label>Imagen previa</Form.Label>
-                        <Form.Control type="file" size="sm" />
+                        <Form.Control type="file" size="sm" disabled/>
                     </Form.Group>
 
                     <Form.Group controlId="imagenPosterior" className="mb-3">
                         <Form.Label>Imagen posterior</Form.Label>
-                        <Form.Control type="file" size="sm" />
+                        <Form.Control type="file" size="sm" disabled/>
                     </Form.Group>
 
                     <Form.Group controlId="documentoAdicional" className="mb-3">
                         <Form.Label>Documento adicional</Form.Label>
-                        <Form.Control type="file" size="sm" />
+                        <Form.Control type="file" size="sm" disabled/>
                     </Form.Group>
 
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
+                        <Button variant="primary" type="submit">Enviar</Button>
+                    </Modal.Footer>
                 </Form>
             </Modal.Body>
-
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
-                <Button variant="primary" type="submit">Enviar</Button>
-            </Modal.Footer>
-
         </Modal>
         </>
     );

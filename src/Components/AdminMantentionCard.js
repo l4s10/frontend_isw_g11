@@ -11,7 +11,8 @@ export default function AdminMantentionCard(props){
                 <Grid >
                 <h1 className="titulo">{props.name}</h1>
                 <div>
-                    <p className="empresa">Llevado a cabo por <b>{props.empresa}</b></p>
+                    <p className="empresa">Llevado a cabo por <b>{props.empresa}</b> <br/>
+                    con un costo de <b>${props.cost}</b></p>
                     <p className="descripcion">
                         {props.descripcion}
                     </p>
@@ -21,8 +22,12 @@ export default function AdminMantentionCard(props){
                     </Grid>
                     <div className="div-padre">
                         {/* <Button size="large" variant="contained" color="error">Editar Mantencion</Button> */}
-                        <ModalTest titleModal="Modificar Mantención" buttonName="Editar mantención" idMantencion={props.key}/>
-                        <Button variant="primary">Descargar informe</Button>
+                        <div className="div-hijo">
+                            <ModalTest titleModal="Modificar Mantención" buttonName="Editar mantención" idMantencion={props.key}/>
+                        </div>
+                        <div className="div-hijo">
+                            <Button variant="primary">Descargar informe</Button>
+                        </div>
                     </div>
                 </div>
             </Grid>
