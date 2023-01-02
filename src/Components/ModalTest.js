@@ -92,7 +92,7 @@ export default function ModalTest(props) {
                     </FloatingLabel>
                     </Form.Group>
 
-                    {/* <Form.Group controlId="imagenPrevia" className="mb-3">
+                    <Form.Group controlId="imagenPrevia" className="mb-3">
                         <Form.Label>Imagen previa</Form.Label>
                         <Form.Control type="file" size="sm" disabled/>
                     </Form.Group>
@@ -105,7 +105,7 @@ export default function ModalTest(props) {
                     <Form.Group controlId="documentoAdicional" className="mb-3">
                         <Form.Label>Documento adicional</Form.Label>
                         <Form.Control type="file" size="sm" disabled/>
-                    </Form.Group> */}
+                    </Form.Group>
 
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>Cerrar</Button>

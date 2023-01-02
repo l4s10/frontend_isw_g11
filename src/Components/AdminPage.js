@@ -27,7 +27,7 @@ export default function AdminPage(){
             <h1 className="titulo">Mural de mantenciones</h1>
             <h2 className="titulo">Bienvenido Administrador</h2>
             <div className="div-padre">
-                <ModalTest titleModal="Nueva Mantención" buttonName="Ingresar Nueva Mantención" reqType="http://localhost:3001/api/Mantention/Create"/>
+                <ModalTest titleModal="Nueva Mantención" buttonName="Ingresar Nueva Mantención" reqType="http://146.83.198.35:1122/api/Mantention/Create"/>
             </div>
             <div className="contenedorCards">
                 {/* Accediendo al arreglo de mantenciones del servidor */}
