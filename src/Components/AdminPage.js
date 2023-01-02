@@ -12,7 +12,7 @@ export default function AdminPage(){
     //HOOKS
     const [data,setData] = useState();
     const getData=async () =>{
-        const response= await Axios.get('http://localhost:3001/api/Mantentions/view');
+        const response= await Axios.get('http://146.83.198.35:1122/api/Mantentions/view');
         setData(response.data);
     }
     useEffect(()=>{
@@ -27,9 +27,23 @@ export default function AdminPage(){
             <h1 className="titulo">Mural de mantenciones</h1>
             <h2 className="titulo">Bienvenido Administrador</h2>
             <div className="div-padre">
-                <ModalTest titleModal="Nueva Mantención" buttonName="Ingresar Nueva Mantención"/>
+                <ModalTest titleModal="Nueva Mantención" buttonName="Ingresar Nueva Mantención" reqType="http://localhost:3001/api/Mantention/Create"/>
             </div>
             <div className="contenedorCards">
+                {/* Accediendo al arreglo de mantenciones del servidor */}
+                {(data ?? []).map((item) => {
+                    return (
+                        <AdminMantentionCard
+                            key={item.id}
+                            name={item.title}
+                            empresa={item.maintenceManager}
+                            cost={item.cost}
+                            descripcion={item.description}
+                            urlBefore="https://www.shutterstock.com/shutterstock/photos/1114829027/display_1500/stock-photo-electric-box-system-in-empty-room-1114829027.jpg"
+                            urlAfter="https://www.shutterstock.com/shutterstock/photos/1780414628/display_1500/stock-photo-electrician-engineer-checks-electrical-circuit-in-control-panel-for-high-current-and-voltage-1780414628.jpg"
+                        />
+                    );
+                })}
                 {/* <AdminMantentionCard
                     name="Mantención N°1: Cambio de rejas en el bloque A"
                     empresa="Empresa Feliz"
@@ -51,20 +65,6 @@ export default function AdminPage(){
                     urlBefore="https://www.shutterstock.com/shutterstock/photos/1114829027/display_1500/stock-photo-electric-box-system-in-empty-room-1114829027.jpg"
                     urlAfter="https://www.shutterstock.com/shutterstock/photos/1780414628/display_1500/stock-photo-electrician-engineer-checks-electrical-circuit-in-control-panel-for-high-current-and-voltage-1780414628.jpg"
                 /> */}
-                {/* Accediendo al arreglo de mantenciones del servidor */}
-                {(data ?? []).map((item) => {
-                    return (
-                        <AdminMantentionCard
-                            key={item.id}
-                            name={item.title}
-                            empresa={item.maintenceManager}
-                            cost={item.cost}
-                            descripcion={item.description}
-                            urlBefore="https://www.shutterstock.com/shutterstock/photos/1114829027/display_1500/stock-photo-electric-box-system-in-empty-room-1114829027.jpg"
-                            urlAfter="https://www.shutterstock.com/shutterstock/photos/1780414628/display_1500/stock-photo-electrician-engineer-checks-electrical-circuit-in-control-panel-for-high-current-and-voltage-1780414628.jpg"
-                        />
-                    );
-                })}
             </div>
         </div>
     );

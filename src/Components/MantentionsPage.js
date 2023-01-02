@@ -12,7 +12,7 @@ export default function Mantentions(){
     //HOOKS
     const [data,setData] = useState();
     const getData=async () =>{
-        const response= await Axios.get('http://localhost:3001/api/Mantentions/view');
+        const response= await Axios.get('http://146.83.198.35:1122/api/Mantentions/view');
         setData(response.data);
     }
     useEffect(()=>{

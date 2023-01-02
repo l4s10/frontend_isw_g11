@@ -3,12 +3,40 @@ import {Button, Modal, Form, FloatingLabel} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
+import axios from 'axios';
 
 export default function ModalTest(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [selectedDate, setSelectedDate] = useState(null);
+
+    //Funcion para el manejo de envios
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        //Obteniendo los valores del formulario para enviarlos a la API
+        const form = event.target;
+        const title = form.elements.title.value;
+        const maintenceManager = form.elements.maintenceManager.value;
+        const cost = form.elements.cost.value;
+        const createdAt = form.elements.createdAt.value;
+        const description = form.elements.description.value;
+        const formData = new FormData(form);
+        //Enviamos los datos utilizando Axios
+        axios.post(props.reqType,{
+            title:title,
+            maintenceManager:maintenceManager,
+            cost:cost,
+            createdAt:createdAt,
+            description:description
+        }).then(response => {
+            console.log(response.data);
+            //Manejando respuestas del servidor
+            handleClose();
+        }).catch(error => {
+            console.error(error);
+        });
+    };
 
     return (
         <>
@@ -22,18 +50,23 @@ export default function ModalTest(props) {
             </Modal.Header>
 
             <Modal.Body>
-                <Form action="http://localhost:3001/api/Mantention/Create" method="POST">
-                    <Form.Group className="mb-3" controlId="nameMantention">
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3" controlId="title">
                         <Form.Label>Nombre</Form.Label>
                         <Form.Control type="text" placeholder="Sin tildes o carácteres especiales" required />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="nameEncargado">
+                    <Form.Group className="mb-3" controlId="maintenceManager">
                         <Form.Label>Empresa encargada</Form.Label>
                         <Form.Control type="text" placeholder="Máx 100 carácteres" required />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="dateMantention">
+                    <Form.Group className="mb-3" controlId="cost">
+                        <Form.Label>Coste</Form.Label>
+                        <Form.Control type="number" placeholder="Ingrese el precio de costo" required />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="createdAt">
                         <Form.Label>Fecha</Form.Label>
                         {/* Datepicker */}
                         <DatePicker
@@ -47,7 +80,7 @@ export default function ModalTest(props) {
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="descripcion">
+                    <Form.Group controlId="description">
                     <Form.Label>Descripción</Form.Label>
                     <FloatingLabel label="max 2000 caracteres">
                         <Form.Control
@@ -59,7 +92,7 @@ export default function ModalTest(props) {
                     </FloatingLabel>
                     </Form.Group>
 
-                    <Form.Group controlId="imagenPrevia" className="mb-3">
+                    {/* <Form.Group controlId="imagenPrevia" className="mb-3">
                         <Form.Label>Imagen previa</Form.Label>
                         <Form.Control type="file" size="sm" disabled/>
                     </Form.Group>
@@ -72,7 +105,7 @@ export default function ModalTest(props) {
                     <Form.Group controlId="documentoAdicional" className="mb-3">
                         <Form.Label>Documento adicional</Form.Label>
                         <Form.Control type="file" size="sm" disabled/>
-                    </Form.Group>
+                    </Form.Group> */}
 
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>Cerrar</Button>

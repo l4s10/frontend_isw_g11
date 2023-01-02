@@ -23,7 +23,7 @@ export default function AdminMantentionCard(props){
                     <div className="div-padre">
                         {/* <Button size="large" variant="contained" color="error">Editar Mantencion</Button> */}
                         <div className="div-hijo">
-                            <ModalTest titleModal="Modificar Mantención" buttonName="Editar mantención" idMantencion={props.key}/>
+                            <ModalTest titleModal="Modificar Mantención" buttonName="Editar mantención" idMantencion={props.key} reqType="http://localhost:3001/api/Mantention/Update"/>
                         </div>
                         <div className="div-hijo">
                             <Button variant="primary">Descargar informe</Button>
